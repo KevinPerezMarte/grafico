@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Kevin Perez CH-7317-->
+  <!--pagina subida en el elace: https://kevinperezmarte.github.io/ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>APP Gastos</title>
+  <LINK REL=StyleSheet HREF="formato.css" TYPE=" " MEDIA=screen>
+</head>
+<body>
+  <header>
+    <h1>App Para Gastos</h1>
+  </header>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTabla(event, 'Gastos')" id="defaultOpen">Seleccion de Gastos</button>
+    <button class="tablinks" onclick="openTabla(event, 'Grafico')">Mostrar Grafica</button>
+  </div>
+
+  <div id="Gastos" class="tabcontent">
+    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <h3>Opciones</h3>
+    <form action="" id="formulario"></form>
+    <select id="Utilidad" name="Utilidad" onchage="Items();">
+      <option value="Comida">Comida</option>
+      <option value="Transpote">Transpote</option>
+      <option value="Servicios">Servicios</option>
+      <option value="Ocio">Ocio</option>
+      <option value="Otros">Otros</option>
+    </select>
+    <input type="number" id="precio" name="precio" placeholder="Costo" min="0.00" value="0.00" step="any"><br><br><br>
+
+    <button id="button" type="button" onclick="Items()" class="btn info">Enviar</button>
+    </form>
+    <div class="Contenedor">
+      <table class="tablet" id="tabla">
+        <thead class="cabeza">
+          <tr>
+            <th>Utilidad</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+       </table>
+  
+    </div>
+  </div>
+
+
+  <div id="Grafico" class="tabcontent">
+    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <h3>Grafico</h3>
+    <p>Gastos Correspondientes</p>
+    <canvas id="myChart" width="400" height="100"></canvas>
+
+
+  </div>
+  <script src="tabla.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="data.js"></script>
+  <script src="accion.js"></script>
+</body>
+
+</html>
